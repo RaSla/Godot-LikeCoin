@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 360.76, 225.9 )
+
+[node name="Coin1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 573.791, 61.9601 )
+
+[node name="Coin2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 83.7348, 333.369 )
+
+[node name="Coin3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 246.817, 235.899 )
+
+[node name="Coin4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 364.39, 376.677 )
+
+[node name="Coin5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 487.778, 234.249 )
+
+[node name="Coin6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 68.2938, 79.6672 )
