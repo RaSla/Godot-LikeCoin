@@ -51,6 +51,6 @@ func get_input():
 
 
 func _on_Player_area_entered(area):
-	print_debug("Player touch " + area.get_name())
+	print("Player: touch " + area.get_name())
 	emit_signal("pickup")
 	area.pickup()

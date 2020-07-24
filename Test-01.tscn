@@ -3,7 +3,7 @@
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 
-[node name="Main" type="Node2D"]
+[node name="Test-01" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 360.76, 225.9 )

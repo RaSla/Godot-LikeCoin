@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=3]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+coin = ExtResource( 3 )
+playtime = 30
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 800.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0117647, 0, 0.439216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinContainer" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 360, 260 )
+
+[node name="PlayerStart" type="Position2D" parent="."]
+position = Vector2( 280, 260 )
+
+[node name="GameTimer" type="Timer" parent="."]
