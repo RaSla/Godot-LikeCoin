@@ -16,7 +16,6 @@ func _ready():
 	window_size = get_viewport().get_visible_rect().size  # Определяем видимую область приложения
 	$Player.window_size = window_size  # область ограничения для объекта "Игрок"
 	$Player.hide()  # делаем игрока невидимым
-	new_game()
 
 func _process(delta):
 	# Количество монеток на Уровне равно нулю?
@@ -35,8 +34,19 @@ func new_game():
 	time_left = playtime
 	$Player.start($PlayerStart.position)
 	$Player.show()
-	$GameTimer.start() # запуск таймера обратного отсчета
 	spawn_coins() # спавн монеток
+	$HUD.update_level(level)
+	$HUD.update_score(score)
+	$HUD.update_time(time_left)
+	$GameTimer.start() # запуск таймера обратного отсчета
+
+func game_over():
+	playing = false
+	$GameTimer.stop()
+	for coin in $CoinContainer.get_children():
+		coin.queue_free()
+	$HUD.show_game_over()
+	#$Player.die()
 
 func spawn_coins():
 	print("Main.spawn_coins: level = "+String(level))
@@ -46,3 +56,19 @@ func spawn_coins():
 		#c.position = Vector2(rand_range(0, window_size.x),
 		#	rand_range(0, window_size.y))
 		c.position = _G.rand_xy()
+
+
+func _on_GameTimer_timeout():
+	time_left -= 1  #отсчет счетчика
+	$HUD.update_time(time_left)    #обновляем интерфейс счетчика
+	if time_left <= 0:
+		game_over()  # конец игры по окончанию счетчика
+
+
+func _on_Player_pickup():
+	score += 1
+	$HUD.update_score(score)
+
+
+func _on_HUD_start_game():
+	new_game()

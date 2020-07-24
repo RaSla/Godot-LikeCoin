@@ -1,5 +1,11 @@
 # 'Godot LikeCoin' CHANGELOG 
 
+## v0.3 (2020-07-24)
+* add: Counters: Level, Score, Time
+* add: **HUD** (Level, Score, Time)
+* add: **`Start`** button (restart game, after 'game over')
+* add: HUD: "Game over" message
+
 ## v0.2 (2020-07-24)
 * fix: reimported sprites without smooth (thanks to Yaroslav Gavrilov)
 * add: **'Main'** scene (is primary, now)
