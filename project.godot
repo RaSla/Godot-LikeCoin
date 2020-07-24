@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot-LikeCoin"
-run/main_scene="res://Test-01.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://sprites/coin/coin1.png"
+
+[autoload]
+
+_G="*res://autoload.gd"
 
 [display]
 
