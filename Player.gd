@@ -32,7 +32,7 @@ func start(pos):
 	$AnimatedSprite.animation = "idle"
 
 func die():
-	$AnimatedSprite.animation = "die"
+	#$AnimatedSprite.animation = "die"
 	set_process(false)
 
 

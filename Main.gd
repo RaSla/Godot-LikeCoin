@@ -4,6 +4,8 @@ extends Node2D
 export (PackedScene) var coin   
 export (int) var playtime
 
+var sfx = AudioStreamPlayer2D.new()
+
 var level = 1  # текущий уровень
 var score  # текущие очки
 var time_left    # время за которое длится игра
@@ -34,6 +36,8 @@ func new_game():
 	time_left = playtime
 	$Player.start($PlayerStart.position)
 	$Player.show()
+	for coin in $CoinContainer.get_children():
+		coin.queue_free()
 	spawn_coins() # спавн монеток
 	$HUD.update_level(level)
 	$HUD.update_score(score)
@@ -43,10 +47,11 @@ func new_game():
 func game_over():
 	playing = false
 	$GameTimer.stop()
-	for coin in $CoinContainer.get_children():
-		coin.queue_free()
 	$HUD.show_game_over()
-	#$Player.die()
+	$Player.die()
+	self.add_child(sfx)
+	sfx.stream = load("res://sfx/Explosion.wav")
+	sfx.play()
 
 func spawn_coins():
 	print("Main.spawn_coins: level = "+String(level))
@@ -67,6 +72,9 @@ func _on_GameTimer_timeout():
 
 func _on_Player_pickup():
 	score += 1
+	self.add_child(sfx)
+	sfx.stream = load("res://sfx/Player_pickup.wav")
+	sfx.play()
 	$HUD.update_score(score)
 
 

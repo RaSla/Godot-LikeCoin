@@ -44,18 +44,18 @@ margin_top = 2.0
 margin_bottom = 99.0
 text = "
 LIKE COIN
-v0.3"
+v0.4"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 376.0
-margin_top = 364.0
-margin_right = 426.0
-margin_bottom = 384.0
-text = "START"
+margin_left = 355.0
+margin_top = 360.0
+margin_right = 445.0
+margin_bottom = 380.0
+text = "NEW GAME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
