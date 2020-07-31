@@ -28,6 +28,7 @@ func _process(delta):
 		time_left += 5
 		# спавним монетки
 		spawn_coins()
+		$HUD.update_level(level)
 
 func new_game():
 	playing = true  # игровая сессия запущена

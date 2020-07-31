@@ -1,11 +1,12 @@
 # 'Godot LikeCoin' CHANGELOG 
 
 ## v0.4 (2020-07-31)
-* add: play sound when "Player pickup Coin"
-* add: play sound when "Game Over"
+* add: **Play sound** when "Player pickup Coin"
+* add: Play sound when "Game Over"
 * fix: Player can't move after "Game Over"
 * fix: Coins stay on screen after "Game Over"
 * fix: Rename "START" button -> "NEW GAME"
+* fix: update Level on HUD
 
 ## v0.3 (2020-07-24)
 * add: Counters: Level, Score, Time
