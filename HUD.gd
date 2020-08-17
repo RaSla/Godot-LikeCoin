@@ -30,7 +30,7 @@ func update_time(value):
 		t += "0" + str(value)
 	else:
 		t += str(value)
-	$MarginContainer/TimeLabel.text = str(value)
+	$MarginContainer/TimeLabel.text = t
 
 func show_message(text):
 	$MessageLabel.text = text
