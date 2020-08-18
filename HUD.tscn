@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://CLASSICFONTSETTINGS.tres" type="DynamicFont" id=3]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -17,23 +18,26 @@ __meta__ = {
 }
 
 [node name="TimeLabel" type="Label" parent="MarginContainer"]
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 780.0
-margin_bottom = 22.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
 text = "Timer: 00"
 align = 2
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer"]
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 780.0
-margin_bottom = 22.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
 text = "Score: 000"
 align = 1
 
 [node name="LevelLabel" type="Label" parent="MarginContainer"]
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 780.0
-margin_bottom = 22.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
 text = "Level: 00"
 
 [node name="MessageLabel" type="Label" parent="."]
@@ -42,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = 2.0
 margin_bottom = 99.0
+custom_fonts/font = ExtResource( 3 )
 text = "
 LIKE COIN
 v0.4"
